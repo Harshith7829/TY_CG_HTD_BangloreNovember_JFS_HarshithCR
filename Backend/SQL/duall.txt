@@ -1,0 +1,30 @@
+SQL> select 10 + 24
+  2  from dual;
+
+     10+24                                                                                          
+----------                                                                                          
+        34                                                                                          
+
+SQL> select 10+24 sum
+  2  from emp;
+
+       SUM                                                                                          
+----------                                                                                          
+        34                                                                                          
+        34                                                                                          
+        34                                                                                          
+        34                                                                                          
+        34                                                                                          
+        34                                                                                          
+        34                                                                                          
+        34                                                                                          
+        34                                                                                          
+        34                                                                                          
+        34                                                                                          
+        34                                                                                          
+        34                                                                                          
+        34                                                                                          
+
+14 rows selected.
+
+SQL> spool off;

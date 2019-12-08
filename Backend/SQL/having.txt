@@ -1,0 +1,460 @@
+SQL> cl scr
+SQL> ed
+Wrote file afiedt.buf
+
+  1  select deptno
+  2  from emp
+  3  group by deptno,sal
+  4* having sal=max(sal)
+SQL> /
+
+    DEPTNO                                                                                          
+----------                                                                                          
+        10                                                                                          
+        20                                                                                          
+        20                                                                                          
+        10                                                                                          
+        30                                                                                          
+        20                                                                                          
+        30                                                                                          
+        20                                                                                          
+        10                                                                                          
+        30                                                                                          
+        30                                                                                          
+        30                                                                                          
+
+12 rows selected.
+
+SQL> select * from emp;
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO               
+---------- ---------- --------- ---------- --------- ---------- ---------- ----------               
+      7369 SMITH      CLERK           7902 17-DEC-80        800                    20               
+      7499 ALLEN      SALESMAN        7698 20-FEB-81       1600        300         30               
+      7521 WARD       SALESMAN        7698 22-FEB-81       1250        500         30               
+      7566 JONES      MANAGER         7839 02-APR-81       2975                    20               
+      7654 MARTIN     SALESMAN        7698 28-SEP-81       1250       1400         30               
+      7698 BLAKE      MANAGER         7839 01-MAY-81       2850                    30               
+      7782 CLARK      MANAGER         7839 09-JUN-81       2450                    10               
+      7788 SCOTT      ANALYST         7566 19-APR-87       3000                    20               
+      7839 KING       PRESIDENT            17-NOV-81       5000                    10               
+      7844 TURNER     SALESMAN        7698 08-SEP-81       1500          0         30               
+      7876 ADAMS      CLERK           7788 23-MAY-87       1100                    20               
+      7900 JAMES      CLERK           7698 03-DEC-81        950                    30               
+      7902 FORD       ANALYST         7566 03-DEC-81       3000                    20               
+      7934 MILLER     CLERK           7782 23-JAN-82       1300                    10               
+
+14 rows selected.
+
+SQL> cl scr
+SQL> select ename, sal
+  2  from emp;
+
+ENAME             SAL                                                                               
+---------- ----------                                                                               
+SMITH             800                                                                               
+ALLEN            1600                                                                               
+WARD             1250                                                                               
+JONES            2975                                                                               
+MARTIN           1250                                                                               
+BLAKE            2850                                                                               
+CLARK            2450                                                                               
+SCOTT            3000                                                                               
+KING             5000                                                                               
+TURNER           1500                                                                               
+ADAMS            1100                                                                               
+JAMES             950                                                                               
+FORD             3000                                                                               
+MILLER           1300                                                                               
+
+14 rows selected.
+
+SQL> cl scr
+SQL> select ename, deptno
+  2  from emp;
+
+ENAME          DEPTNO                                                                               
+---------- ----------                                                                               
+SMITH              20                                                                               
+ALLEN              30                                                                               
+WARD               30                                                                               
+JONES              20                                                                               
+MARTIN             30                                                                               
+BLAKE              30                                                                               
+CLARK              10                                                                               
+SCOTT              20                                                                               
+KING               10                                                                               
+TURNER             30                                                                               
+ADAMS              20                                                                               
+JAMES              30                                                                               
+FORD               20                                                                               
+MILLER             10                                                                               
+
+14 rows selected.
+
+SQL> cl scr
+SQL> select job
+  2  from emp;
+
+JOB                                                                                                 
+---------                                                                                           
+CLERK                                                                                               
+SALESMAN                                                                                            
+SALESMAN                                                                                            
+MANAGER                                                                                             
+SALESMAN                                                                                            
+MANAGER                                                                                             
+MANAGER                                                                                             
+ANALYST                                                                                             
+PRESIDENT                                                                                           
+SALESMAN                                                                                            
+CLERK                                                                                               
+CLERK                                                                                               
+ANALYST                                                                                             
+CLERK                                                                                               
+
+14 rows selected.
+
+SQL> cl scr
+SQL> select empno, ename
+  2  from emp;
+
+     EMPNO ENAME                                                                                    
+---------- ----------                                                                               
+      7369 SMITH                                                                                    
+      7499 ALLEN                                                                                    
+      7521 WARD                                                                                     
+      7566 JONES                                                                                    
+      7654 MARTIN                                                                                   
+      7698 BLAKE                                                                                    
+      7782 CLARK                                                                                    
+      7788 SCOTT                                                                                    
+      7839 KING                                                                                     
+      7844 TURNER                                                                                   
+      7876 ADAMS                                                                                    
+      7900 JAMES                                                                                    
+      7902 FORD                                                                                     
+      7934 MILLER                                                                                   
+
+14 rows selected.
+
+SQL> cl scr
+SQL> select ename, job
+  2  from emp;
+
+ENAME      JOB                                                                                      
+---------- ---------                                                                                
+SMITH      CLERK                                                                                    
+ALLEN      SALESMAN                                                                                 
+WARD       SALESMAN                                                                                 
+JONES      MANAGER                                                                                  
+MARTIN     SALESMAN                                                                                 
+BLAKE      MANAGER                                                                                  
+CLARK      MANAGER                                                                                  
+SCOTT      ANALYST                                                                                  
+KING       PRESIDENT                                                                                
+TURNER     SALESMAN                                                                                 
+ADAMS      CLERK                                                                                    
+JAMES      CLERK                                                                                    
+FORD       ANALYST                                                                                  
+MILLER     CLERK                                                                                    
+
+14 rows selected.
+
+SQL> cl scr
+SQL> select sal
+  2  from emp;
+
+       SAL                                                                                          
+----------                                                                                          
+       800                                                                                          
+      1600                                                                                          
+      1250                                                                                          
+      2975                                                                                          
+      1250                                                                                          
+      2850                                                                                          
+      2450                                                                                          
+      3000                                                                                          
+      5000                                                                                          
+      1500                                                                                          
+      1100                                                                                          
+       950                                                                                          
+      3000                                                                                          
+      1300                                                                                          
+
+14 rows selected.
+
+SQL> clscr
+SP2-0042: unknown command "clscr" - rest of line ignored.
+SQL> cl scr
+SQL> select sal*12 "annual sal"
+  2  from emp;
+
+annual sal                                                                                          
+----------                                                                                          
+      9600                                                                                          
+     19200                                                                                          
+     15000                                                                                          
+     35700                                                                                          
+     15000                                                                                          
+     34200                                                                                          
+     29400                                                                                          
+     36000                                                                                          
+     60000                                                                                          
+     18000                                                                                          
+     13200                                                                                          
+     11400                                                                                          
+     36000                                                                                          
+     15600                                                                                          
+
+14 rows selected.
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1  select sal*12 "Annual Sal"
+  2* from emp
+SQL> /
+
+Annual Sal                                                                                          
+----------                                                                                          
+      9600                                                                                          
+     19200                                                                                          
+     15000                                                                                          
+     35700                                                                                          
+     15000                                                                                          
+     34200                                                                                          
+     29400                                                                                          
+     36000                                                                                          
+     60000                                                                                          
+     18000                                                                                          
+     13200                                                                                          
+     11400                                                                                          
+     36000                                                                                          
+     15600                                                                                          
+
+14 rows selected.
+
+SQL> cl scr
+SQL> select sal*12 "Annuam
+  2  cl scr
+  3  
+SQL> select sal*12 "Annual Salary", (sal*12)/2 "Half Term Salary"
+  2  from emp;
+
+Annual Salary Half Term Salary                                                                      
+------------- ----------------                                                                      
+         9600             4800                                                                      
+        19200             9600                                                                      
+        15000             7500                                                                      
+        35700            17850                                                                      
+        15000             7500                                                                      
+        34200            17100                                                                      
+        29400            14700                                                                      
+        36000            18000                                                                      
+        60000            30000                                                                      
+        18000             9000                                                                      
+        13200             6600                                                                      
+        11400             5700                                                                      
+        36000            18000                                                                      
+        15600             7800                                                                      
+
+14 rows selected.
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1  select ename, sal*12 "Annual Salary", (sal*12)/2 "Half Term Salary"
+  2* from emp
+SQL> /
+
+ENAME      Annual Salary Half Term Salary                                                           
+---------- ------------- ----------------                                                           
+SMITH               9600             4800                                                           
+ALLEN              19200             9600                                                           
+WARD               15000             7500                                                           
+JONES              35700            17850                                                           
+MARTIN             15000             7500                                                           
+BLAKE              34200            17100                                                           
+CLARK              29400            14700                                                           
+SCOTT              36000            18000                                                           
+KING               60000            30000                                                           
+TURNER             18000             9000                                                           
+ADAMS              13200             6600                                                           
+JAMES              11400             5700                                                           
+FORD               36000            18000                                                           
+MILLER             15600             7800                                                           
+
+14 rows selected.
+
+SQL> cl scr
+SQL> select ename,(sal*0.15)+sal "15% hike sal"
+  2  from emp;
+
+ENAME      15% hike sal                                                                             
+---------- ------------                                                                             
+SMITH               920                                                                             
+ALLEN              1840                                                                             
+WARD             1437.5                                                                             
+JONES           3421.25                                                                             
+MARTIN           1437.5                                                                             
+BLAKE            3277.5                                                                             
+CLARK            2817.5                                                                             
+SCOTT              3450                                                                             
+KING               5750                                                                             
+TURNER             1725                                                                             
+ADAMS              1265                                                                             
+JAMES            1092.5                                                                             
+FORD               3450                                                                             
+MILLER             1495                                                                             
+
+14 rows selected.
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1  select ename, sal ,(sal*0.15)+sal "15% hike sal"
+  2* from emp
+SQL> /
+
+ENAME             SAL 15% hike sal                                                                  
+---------- ---------- ------------                                                                  
+SMITH             800          920                                                                  
+ALLEN            1600         1840                                                                  
+WARD             1250       1437.5                                                                  
+JONES            2975      3421.25                                                                  
+MARTIN           1250       1437.5                                                                  
+BLAKE            2850       3277.5                                                                  
+CLARK            2450       2817.5                                                                  
+SCOTT            3000         3450                                                                  
+KING             5000         5750                                                                  
+TURNER           1500         1725                                                                  
+ADAMS            1100         1265                                                                  
+JAMES             950       1092.5                                                                  
+FORD             3000         3450                                                                  
+MILLER           1300         1495                                                                  
+
+14 rows selected.
+
+SQL> cl scr
+SQL> select ename, sl
+  2  aed
+  3  ed
+  4  ;
+ed
+*
+ERROR at line 3:
+ORA-00923: FROM keyword not found where expected 
+
+
+SQL> cl scr
+SQL> select ename, sal-(sal*0.19)"19% deduct sal"
+  2  from emp;
+
+ENAME      19% deduct sal                                                                           
+---------- --------------                                                                           
+SMITH                 648                                                                           
+ALLEN                1296                                                                           
+WARD               1012.5                                                                           
+JONES             2409.75                                                                           
+MARTIN             1012.5                                                                           
+BLAKE              2308.5                                                                           
+CLARK              1984.5                                                                           
+SCOTT                2430                                                                           
+KING                 4050                                                                           
+TURNER               1215                                                                           
+ADAMS                 891                                                                           
+JAMES               769.5                                                                           
+FORD                 2430                                                                           
+MILLER               1053                                                                           
+
+14 rows selected.
+
+SQL> cl scr
+SQL> select ename, sal, job, comm, deptno,sal*12 "Annual Salary"
+  2  from emp;
+
+ENAME             SAL JOB             COMM     DEPTNO Annual Salary                                 
+---------- ---------- --------- ---------- ---------- -------------                                 
+SMITH             800 CLERK                        20          9600                                 
+ALLEN            1600 SALESMAN         300         30         19200                                 
+WARD             1250 SALESMAN         500         30         15000                                 
+JONES            2975 MANAGER                      20         35700                                 
+MARTIN           1250 SALESMAN        1400         30         15000                                 
+BLAKE            2850 MANAGER                      30         34200                                 
+CLARK            2450 MANAGER                      10         29400                                 
+SCOTT            3000 ANALYST                      20         36000                                 
+KING             5000 PRESIDENT                    10         60000                                 
+TURNER           1500 SALESMAN           0         30         18000                                 
+ADAMS            1100 CLERK                        20         13200                                 
+JAMES             950 CLERK                        30         11400                                 
+FORD             3000 ANALYST                      20         36000                                 
+MILLER           1300 CLERK                        10         15600                                 
+
+14 rows selected.
+
+SQL> select distinct (sal)
+  2  from emp;
+
+       SAL                                                                                          
+----------                                                                                          
+      2450                                                                                          
+      5000                                                                                          
+      1300                                                                                          
+      1250                                                                                          
+      2850                                                                                          
+      2975                                                                                          
+      1100                                                                                          
+      3000                                                                                          
+       800                                                                                          
+      1600                                                                                          
+      1500                                                                                          
+       950                                                                                          
+
+12 rows selected.
+
+SQL> select emp.* , sal*12 "Annual Salary"
+  2  from emp;
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO Annual Salary 
+---------- ---------- --------- ---------- --------- ---------- ---------- ---------- ------------- 
+      7369 SMITH      CLERK           7902 17-DEC-80        800                    20          9600 
+      7499 ALLEN      SALESMAN        7698 20-FEB-81       1600        300         30         19200 
+      7521 WARD       SALESMAN        7698 22-FEB-81       1250        500         30         15000 
+      7566 JONES      MANAGER         7839 02-APR-81       2975                    20         35700 
+      7654 MARTIN     SALESMAN        7698 28-SEP-81       1250       1400         30         15000 
+      7698 BLAKE      MANAGER         7839 01-MAY-81       2850                    30         34200 
+      7782 CLARK      MANAGER         7839 09-JUN-81       2450                    10         29400 
+      7788 SCOTT      ANALYST         7566 19-APR-87       3000                    20         36000 
+      7839 KING       PRESIDENT            17-NOV-81       5000                    10         60000 
+      7844 TURNER     SALESMAN        7698 08-SEP-81       1500          0         30         18000 
+      7876 ADAMS      CLERK           7788 23-MAY-87       1100                    20         13200 
+      7900 JAMES      CLERK           7698 03-DEC-81        950                    30         11400 
+      7902 FORD       ANALYST         7566 03-DEC-81       3000                    20         36000 
+      7934 MILLER     CLERK           7782 23-JAN-82       1300                    10         15600 
+
+14 rows selected.
+
+SQL> select distinct (deptno) from emp;
+
+    DEPTNO                                                                                          
+----------                                                                                          
+        30                                                                                          
+        20                                                                                          
+        10                                                                                          
+
+SQL> select distinct (mgr) from emp;
+
+       MGR                                                                                          
+----------                                                                                          
+      7839                                                                                          
+                                                                                                    
+      7782                                                                                          
+      7698                                                                                          
+      7902                                                                                          
+      7566                                                                                          
+      7788                                                                                          
+
+7 rows selected.
+
+SQL> spool off;
