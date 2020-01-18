@@ -1,0 +1,29 @@
+<div class="alert alert-danger" *ngIf="error">{{error}}</div>
+<div class="alert alert-success">{{success}}</div>
+<div class="container mt-3">
+<table class="table table-bordered table-hover">
+    <thead class="thead-dark">
+        <tr>
+            <th>User ID</th>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Body</th>
+            <th>Update</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor='let post of posts'>
+            <td>{{post.userId}}</td>
+            <td>{{post.id}}</td>
+            <td>{{post.title}}</td>
+            <td>{{post.body}}</td>
+            <td><button class="btn btn-outline-success" >Update</button></td>
+            <td>
+                <button class="btn btn-outline-primary" 
+                (click)='deletePosts(post)'>Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+</div>
